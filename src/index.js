@@ -1,17 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client'
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import GifExpertApp from './GifExpertApp'
+//import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const root = createRoot(document.getElementById('root'))
+root.render(
+  <GifExpertApp/>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+/*import { createElement } from "react";
+
+const api_key = "tdQN87SoH6Gd31P5apt9gRle03tpi4gT";
+
+const peticion = fetch(`https://api.giphy.com/v1/gifs/random?api_key=${api_key}`)
+
+peticion.then(res =>res.json())
+.then(({data}) =>{
+    const {url} = data.images.original
+    let img = document.createElement('img')
+    img.src = url;
+    document.body.append(img)
+    console.log(data.images.original.url)
+})
+.catch(console.warn)*/
+
+
+
